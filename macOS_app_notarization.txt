@@ -1,0 +1,4 @@
+xcrun altool --notarize-app --primary-bundle-id "com.sourcetrail" --username "egraether@coati.io" --password "@keychain:sourcetrail_notarization" --file Sourcetrail.zip
+
+xcrun altool --notarization-history 0 -u "egraether@coati.io" -p "@keychain:sourcetrail_notarization"
+xcrun altool --notarization-info <identifier> -u "egraether@coati.io" -p "@keychain:sourcetrail_notarization"
