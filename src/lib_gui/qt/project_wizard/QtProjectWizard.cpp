@@ -803,7 +803,6 @@ void QtProjectWizard::selectedSourceGroupChanged(int index)
 	std::shared_ptr<SourceGroupSettings> group = m_allSourceGroupSettings[index];
 
 	QtProjectWizardContentGroup* summary = new QtProjectWizardContentGroup(this);
-	summary->setIsForm(true);
 
 	QtProjectWizardContentSourceGroupData* content = new QtProjectWizardContentSourceGroupData(
 		group, this);
