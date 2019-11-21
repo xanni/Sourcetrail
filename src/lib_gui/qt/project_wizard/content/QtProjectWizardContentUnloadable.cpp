@@ -1,15 +1,5 @@
 #include "QtProjectWizardContentUnloadable.h"
 
-#include <QCheckBox>
-#include <QLineEdit>
-#include <QMessageBox>
-#include <boost/filesystem/path.hpp>
-
-#include "FileSystem.h"
-#include "ProjectSettings.h"
-#include "SourceGroupSettingsCustomCommand.h"
-#include "SqliteIndexStorage.h"
-
 QtProjectWizardContentUnloadable::QtProjectWizardContentUnloadable(
 	std::shared_ptr<SourceGroupSettingsUnloadable> settings, QtProjectWizardWindow* window)
 	: QtProjectWizardContent(window), m_settings(settings)
