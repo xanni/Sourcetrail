@@ -1,0 +1,79 @@
+[
+	{
+		"type" : "quotation",
+		"range" : {
+			"start" : "'",
+			"end" : "'"
+		},
+		"priority" : true
+	},
+	{
+		"type" : "quotation",
+		"patterns" : [ "\"(?:[^\"]|\\\\.)*\"", "`(?:[^`]|\\\\.)*`" ],
+		"priority" : true
+	},
+	{
+		"type" : "comment",
+		"range" : {
+			"start" : "^=[a-z]",
+			"end" : "^=cut"
+		},
+		"priority" : true
+	},
+	{
+		"type" : "comment",
+		"range" : {
+			"start" : "^__DATA__",
+			"end" : "^__END__"
+		},
+		"priority" : true
+	},
+	{
+		"type" : "comment",
+		"patterns" : [ "#[^\n]*" ],
+		"priority" : true
+	},
+	{
+		"type" : "keyword",
+		"patterns" : [
+			"\\b(?:if|elsif|else|unless|given|when|default)\\b",
+			"\\b(?:while|for(?:each)?|do|until|continue)\\b",
+			"\\b(?:defined|undef|eq|ne|[gl][et]|cmp|not|and|or|xor|bless|ref)\\b",
+			"\\b(?:BEGIN|CHECK|INIT|END|UNITCHECK)\\b",
+			"\\b(?:my|our|local|state)\\b",
+			"\\b(?:return|last|next|redo|goto|break)\\b",
+			"\\b(?:chom?p|chr|crypt|r?index|lc(?:first)?|length|ord|pack|sprintf|substr|fc|uc(?:first)?)\\b",
+			"\\b(?:pos|quotemeta|split|study)\\b",
+			"\\b(?:abs|atan2|cos|exp|hex|int|log|oct|s?rand|sin|sqrt)\\b",
+			"\\b(?:splice|unshift|shift|push|pop|join|reverse|grep|map|sort|unpack)\\b",
+			"\\b(?:delete|each|exists|keys|values)\\b",
+			"\\b(?:syscall|dbmopen|dbmclose)\\b",
+			"\\b(?:binmode|close(?:dir)?|eof|fileno|getc|l?stat|printf?|read(?:dir|line|pipe)?|rewinddir|say|select|tell(?:dir)?|write)\\b",
+			"\\b(?:fcntl|flock|ioctl|open(?:dir)?|seek(?:dir)?|sys(?:open|read|seek|write)|truncate)\\b",
+			"\\bvec\\b",
+			"\\b(?:ch(?:dir|mod|own|root)|glob|link|mkdir|readlink|rename|rmdir|symlink|umask|unlink|utime)\\b",
+			"-[rwxoRWXOezsfdlpSbctugkTBMAC]\\b",
+			"\\b(?:caller|die|dump|eval|exit|wantarray|evalbytes)\\b",
+			"\\b(?:require|import|unimport)\\b",
+			"\\b(?:use|no)\\s+(?:attributes|attrs|autodie|autouse|base|big(?:int|num|rat)|blib|bytes|charnames|constant|diagnostics|encoding(?:::warnings)?|feature|fields|filetest|if|integer|less|lib|locale|mro|open|ops|overload|overloading|parent|re|sigtrap|sort|strict|subs|threads(?:shared)?|utf8|vars|version|vmsish|warnings(?:::register)?)?\\b",
+			"\\b(?:alarm|exec|fork|get(?:pgrp|ppid|priority)|kill|pipe|set(?:pgrp|priority)|sleep|system|times|wait(?:pid)?)\\b",
+			"\\b(?:accept|bind|connect|get(?:peername|sock(?:name|opt))|listen|recv|send|setsockopt|shutdown|socket(?:pair)?)\\b",
+			"\\b(?:msg(?:ctl|get|rcv|snd)|sem(?:ctl|get|op)|shm(?:ctl|get|read|write))\\b",
+			"\\b(?:(?:end|[gs]et)(?:host|net|proto|serv)ent|get(?:host|net)by(?:addr|name)|protoby(?:name|number)|servby(?:name|port))\\b",
+			"\\b(?:get(?:pw(?:uid|nam)|gr(?:gid|nam)|login)|(?:end|[gs]et)(?:pw|gr)ent)\\b",
+			"\\b(?:gmtime|localtime|time)\\b",
+			"\\b(?:warn|format|formline|reset|scalar|prototype|lock|tied?|untie)\\b",
+			"\\b(?:__DATA__|__END__|__FILE__|__LINE__|__PACKAGE__|CORE|package|sub|q|qq|qr|qw|qx|s|tr|y)\\b"
+		]
+	},
+	{
+		"type" : "number",
+		"patterns" : [
+			"\\b(?:0(?:(?:x[\\da-fA-F_]*)|(?:b[01][01_]*)|(?:o[0-7_]*)|)|[1-9][\\d_]*)\\b",
+			"\\bv\\d+(?:\\.\\d+)*|\\d+(?:\\.\\d+){2,}\\b",
+			"\\b\\d[\\d_]*[eE][-+]?\\d+",
+			"\\b\\d[\\d_]*\\.[\\d_]*(?:[eE][-+]?\\d+)?",
+			"\\.\\d[\\d_]*(?:[eE][-+]?\\d+)?"
+		]
+	}
+]
