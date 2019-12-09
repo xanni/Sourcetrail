@@ -74,7 +74,7 @@ This is required for generating the Sourcetrail version number. Get it from: htt
 
 Make sure `git` is available in added to your `PATH` environment variable.
 
-#### CMake v3.12
+#### CMake v3.10
 
 This is used for generating a build configuration. Get it from: https://cmake.org/download/
 
@@ -90,7 +90,7 @@ This is optionally used to speed up rebuilds if found in `PATH`.
 
 ### Required dependencies
 
-#### Boost 1.67
+#### Boost 1.65
 For the __msvc__ compiler pre-built binaries can be downloaded from [sourceforge.net/projects/boost/files/boost-binaries](https://sourceforge.net/projects/boost/files/boost-binaries/)
 
 For building on Unix:
@@ -99,9 +99,9 @@ $ ./bootstrap.sh --with-libraries=filesystem,program_options,system,date_time
 $ ./b2 --link=static --variant=release --threading=multi --runtime-link=static --cxxflags=-fPIC
 ```
 
-#### Qt 5.12
+#### Qt 5.9 or later
 
-__Note__: still causes style issues on Windows, resort to Qt 5.10
+__Note__: v5.12 still causes style issues on Windows, resort to Qt 5.10
 
 For the __msvc__ compiler pre-built binaries can be downloaded from [download.qt.io/official_releases/qt](http://download.qt.io/official_releases/qt/)
 
